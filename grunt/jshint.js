@@ -7,8 +7,8 @@ module.exports = {
     },
     all: {
         src: [
-            'public/scripts/**/*.js',
-            '!public/scripts/vendor/**/*.js'
+            'tasks/**/*.js',
+            'test/**/*.js'
         ]
     }
 };

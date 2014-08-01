@@ -1,17 +1,26 @@
 'use strict';
 
 describe('grunt check branch', function () {
-    var controller, rewire, constants, fs,
-        controllerPath = '../../../../server/controllers/feed';
+    var grunt = require('grunt');
 
-
-
-    it('should not be undefined', function () {
-        expect(controller).to.be.ok;
+    it('should not pass with mismatched branches', function (done) {
+        grunt.util.spawn({
+            grunt: true,
+            args: ['burrows-check_build_branch:test_fail']
+        }, function(err) {
+           expect(err).to.not.equal(null);
+            done();
+        });
     });
 
-    describe('getFeed function', function () {
-
+    it('should pass with correct branch name', function (done) {
+        grunt.util.spawn({
+            grunt: true,
+            args: ['burrows-check_build_branch:test_success']
+        }, function(err) {
+            expect(err).to.equal(null);
+            done();
+        });
     });
 
 });
