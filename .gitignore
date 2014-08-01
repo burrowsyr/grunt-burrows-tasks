@@ -1,0 +1,14 @@
+#GIT
+.orig
+
+# Mac OS
+.DS_Store
+*.swp
+*.lock
+profile
+
+# Webstorm
+.Idea/
+
+# Node
+node_modules
